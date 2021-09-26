@@ -1,14 +1,22 @@
 {
     // ? TypeScript to JavaScript 컴파일 옵션
     "compilerOptions": {
+        /* normal import, export, etc... */
         "module": "commonjs",
+
+        /* ECMAscript 버전 */
         "target": "ES2015",
-        "sourceMap": true
+
+        /* 소스맵 생성 */
+        "sourceMap": true,
+
+        /* dist(ribution) 폴더로 컴파일 결과물 출력 */
+        "outDir": "dist" 
     },
 
     // ? 컴파일 포함 목록
     "include": [
-        "index.ts"
+        "src/**/*"
     ],
 
     // ? 컴파일 제외 목록
