@@ -1,0 +1,11 @@
+{
+  "name": "simplechain",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/SunhyeokChoe/simplechain.git",
+  "author": "SunhyeokChoe <chltnsgur2@daum.net>",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.4.3"
+  }
+}

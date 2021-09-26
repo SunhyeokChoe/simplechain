@@ -1,0 +1,18 @@
+{
+    // ? TypeScript to JavaScript 컴파일 옵션
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "ES2015",
+        "sourceMap": true
+    },
+
+    // ? 컴파일 포함 목록
+    "include": [
+        "index.ts"
+    ],
+
+    // ? 컴파일 제외 목록
+    "exclude": [
+        "node_modules"
+    ],
+}
