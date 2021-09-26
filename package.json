@@ -7,5 +7,9 @@
   "license": "MIT",
   "dependencies": {
     "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "prestart": "tsc",
+    "start": "node index.js"
   }
 }
