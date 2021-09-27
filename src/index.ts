@@ -36,7 +36,7 @@ class Block {
     }
 }
 
-const genesisBlock: Block = new Block(0, "20201204021501", "", "hello", 12345);
+const genesisBlock: Block = new Block(0, "20201204021501", "", "genesisBlock", 12345);
 
 let blockchain: Block[] = [genesisBlock];
 
@@ -46,6 +46,11 @@ const getLatestBlock = (): Block => blockchain[blockchain.length - 1];
 
 const getNewTimeStamp = (): number => Math.round(new Date().getTime() / 1000);
 
+/**
+ * Block 생성
+ * 
+ * 
+ */
 const createNewBlock = (data: string): Block => {
     const previousBlock: Block = getLatestBlock();
     const newIndex: number = previousBlock.index + 1;
@@ -63,9 +68,16 @@ const createNewBlock = (data: string): Block => {
         newTimestamp
     );
 
+    addBlock(newBlock);
+
     return newBlock;
 }
 
+/**
+ * Block 해쉬값 생성
+ * 
+ * 
+ */
 const getHashforBlock = (aBlock: Block): string =>
     Block.calculateBlockHash(
         aBlock.index,
@@ -74,6 +86,11 @@ const getHashforBlock = (aBlock: Block): string =>
         aBlock.data
     );
 
+/**
+ * Block 데이터 구조 검증
+ * 
+ * 
+ */
 const isBlockValid = (candidateBlock: Block, previousBlock: Block): boolean => {
     if (!Block.validateStructure(candidateBlock))
         return false;
@@ -92,6 +109,11 @@ const addBlock = (candidateBlock: Block): void => {
         blockchain.push(candidateBlock);
 }
 
-console.log(createNewBlock("hello"), createNewBlock("bye"));
+
+// 테스트 Block 생성
+for (let i = 0; i < 10; i++)
+    createNewBlock(`block#${i}`);
+
+console.log('Generated Block Instances:', blockchain);
 
 export { };
